@@ -17,7 +17,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("TEst top")
+        println("Test top")
         self.title = "List"
         self.tableView.backgroundColor = UIColor.purpleColor()
         self.tableView.dataSource = self
@@ -57,7 +57,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
 override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowPerson" {
+        if segue.identifier == "ShowPersonDetail" {
             println("showing person")
             let destinationVC = segue.destinationViewController as PersonDetailViewController
             let indexPath = self.tableView.indexPathForSelectedRow()
