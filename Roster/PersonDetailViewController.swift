@@ -14,7 +14,7 @@ class PersonDetailViewController: UIViewController, UITextFieldDelegate, UIImage
     
     @IBOutlet weak var image: UIImageView!
 
-    var selectedPerson = Person(firstName: "Dummy", lastName: "Dummy")
+    var selectedPerson = Person(firstName: "dummy", lastName: "dummy")
     
     override func viewDidLoad(){
         super.viewDidLoad()
