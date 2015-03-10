@@ -6,11 +6,12 @@
 //  Copyright (c) 2015 Bloc. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Person {
-    var firstName = "name"
-    var lastName = "name"
+    var firstName: String
+    var lastName = "Doe"
+    var image: UIImage?
     
     init(firstName : String, lastName : String){
         self.firstName = firstName

@@ -63,41 +63,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGu-tg-pBV">
-                                <rect key="frame" x="232" y="20" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgH-Ex-Yj6">
+                                <rect key="frame" x="235" y="130" width="91" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playIAm.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-Hl-m4X">
+                                <rect key="frame" x="166" y="182" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DW4-M1-IDv"/>
+                                    <constraint firstAttribute="width" constant="240" id="PHg-w0-BIE"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="QfF-OI-cWd"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="Rzk-WU-1iG"/>
+                                    <constraint firstAttribute="height" constant="128" id="XJf-p3-gX4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="yDq-WT-lsE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nv6-vF-g6n">
+                                <rect key="frame" x="257" y="535" width="79" height="30"/>
+                                <state key="normal" title="Photos">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="photos:" destination="7OA-9t-sWd" eventType="touchUpInside" id="lmf-UP-s8m"/>
+                                    <action selector="photosButtonPressed:" destination="7OA-9t-sWd" eventType="touchUpInside" id="Rqp-YF-iIX"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGu-tg-pBV">
+                                <rect key="frame" x="232" y="72" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="Puz-Nx-S2W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgH-Ex-Yj6">
-                                <rect key="frame" x="232" y="58" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wGu-tg-pBV" firstAttribute="top" secondItem="bAW-uN-bKl" secondAttribute="topMargin" id="GnC-jv-l4B"/>
+                            <constraint firstItem="OgH-Ex-Yj6" firstAttribute="top" secondItem="wGu-tg-pBV" secondAttribute="bottom" constant="23" id="49V-IZ-QpS"/>
+                            <constraint firstItem="cTy-Hl-m4X" firstAttribute="top" secondItem="OgH-Ex-Yj6" secondAttribute="bottom" constant="22" id="8aT-hg-yjj"/>
+                            <constraint firstAttribute="centerX" secondItem="wGu-tg-pBV" secondAttribute="centerX" constant="19.5" id="9G8-zn-kjS"/>
+                            <constraint firstItem="wGu-tg-pBV" firstAttribute="top" secondItem="bAW-uN-bKl" secondAttribute="topMargin" constant="77" id="GnC-jv-l4B"/>
                             <constraint firstItem="OgH-Ex-Yj6" firstAttribute="leading" secondItem="wGu-tg-pBV" secondAttribute="leading" id="H1c-n5-cgv"/>
                             <constraint firstItem="OgH-Ex-Yj6" firstAttribute="trailing" secondItem="wGu-tg-pBV" secondAttribute="trailing" id="KtS-Al-7co"/>
-                            <constraint firstItem="OgH-Ex-Yj6" firstAttribute="top" secondItem="wGu-tg-pBV" secondAttribute="bottom" constant="8" id="X3g-xu-GeI"/>
+                            <constraint firstAttribute="centerX" secondItem="OgH-Ex-Yj6" secondAttribute="centerX" id="Syh-VH-I8I"/>
+                            <constraint firstItem="OgH-Ex-Yj6" firstAttribute="top" secondItem="wGu-tg-pBV" secondAttribute="bottom" constant="23" id="X3g-xu-GeI"/>
                             <constraint firstItem="mnt-oW-rW6" firstAttribute="top" secondItem="OgH-Ex-Yj6" secondAttribute="bottom" constant="512" id="c4j-gM-may"/>
+                            <constraint firstAttribute="centerX" secondItem="cTy-Hl-m4X" secondAttribute="centerX" constant="14" id="dfF-0Z-JzP"/>
+                            <constraint firstAttribute="centerX" secondItem="OgH-Ex-Yj6" secondAttribute="centerX" constant="19.5" id="eUs-IV-1DH"/>
+                            <constraint firstItem="OgH-Ex-Yj6" firstAttribute="leading" secondItem="wGu-tg-pBV" secondAttribute="leading" constant="3" id="eXY-3E-3fo"/>
                             <constraint firstItem="wGu-tg-pBV" firstAttribute="leading" secondItem="bAW-uN-bKl" secondAttribute="leading" constant="232" id="hgM-gh-FB0"/>
-                            <constraint firstItem="wGu-tg-pBV" firstAttribute="top" secondItem="Nka-iw-K6m" secondAttribute="bottom" id="lt3-kf-6ga"/>
-                            <constraint firstItem="OgH-Ex-Yj6" firstAttribute="top" secondItem="wGu-tg-pBV" secondAttribute="bottom" constant="8" id="mo4-QF-QeV"/>
-                            <constraint firstItem="mnt-oW-rW6" firstAttribute="top" secondItem="wGu-tg-pBV" secondAttribute="bottom" constant="550" id="puJ-7h-gKo"/>
+                            <constraint firstItem="wGu-tg-pBV" firstAttribute="top" secondItem="Nka-iw-K6m" secondAttribute="bottom" constant="13" id="lt3-kf-6ga"/>
+                            <constraint firstItem="OgH-Ex-Yj6" firstAttribute="top" secondItem="wGu-tg-pBV" secondAttribute="bottom" constant="23" id="mo4-QF-QeV"/>
+                            <constraint firstItem="mnt-oW-rW6" firstAttribute="top" secondItem="wGu-tg-pBV" secondAttribute="bottom" constant="493" id="puJ-7h-gKo"/>
+                            <constraint firstItem="wGu-tg-pBV" firstAttribute="top" secondItem="Nka-iw-K6m" secondAttribute="bottom" constant="8" id="red-n0-pjV"/>
+                            <constraint firstItem="wGu-tg-pBV" firstAttribute="top" secondItem="bAW-uN-bKl" secondAttribute="top" constant="77" id="sNX-Dg-EVe"/>
+                            <constraint firstItem="OgH-Ex-Yj6" firstAttribute="top" secondItem="wGu-tg-pBV" secondAttribute="bottom" constant="28" id="v1P-KM-Tx3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9G8-zn-kjS"/>
+                                <exclude reference="GnC-jv-l4B"/>
+                                <exclude reference="lt3-kf-6ga"/>
+                                <exclude reference="sNX-Dg-EVe"/>
+                                <exclude reference="49V-IZ-QpS"/>
+                                <exclude reference="H1c-n5-cgv"/>
+                                <exclude reference="KtS-Al-7co"/>
+                                <exclude reference="Syh-VH-I8I"/>
+                                <exclude reference="X3g-xu-GeI"/>
+                                <exclude reference="mo4-QF-QeV"/>
+                                <exclude reference="c4j-gM-may"/>
+                                <exclude reference="puJ-7h-gKo"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="firstNameLabel" destination="wGu-tg-pBV" id="6ar-u8-sFb"/>
+                        <outlet property="image" destination="cTy-Hl-m4X" id="TXe-ly-Jbf"/>
                         <outlet property="lastNameLabel" destination="OgH-Ex-Yj6" id="7yE-jX-TLm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZB-4C-VBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="387"/>
+            <point key="canvasLocation" x="1632" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lAA-LM-SJq">
@@ -118,4 +166,7 @@
             <point key="canvasLocation" x="121" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="playIAm.jpg" width="720" height="540"/>
+    </resources>
 </document>
