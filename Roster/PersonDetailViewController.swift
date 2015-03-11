@@ -42,21 +42,26 @@ override func viewWillDisappear(animated: Bool) {
         super.didReceiveMemoryWarning()
     }
     
+
     @IBAction func photosButtonPressed(sender: AnyObject) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        {
                 imagePickerController.sourceType =
-                    UIImagePickerControllerSourceType.Camera }
-        else {
-            imagePickerController.sourceType =
-                UIImagePickerControllerSourceType.PhotoLibrary}
+                    UIImagePickerControllerSourceType.Camera
+        }
+        else
+        {
+            imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        }
+        
         self.presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
-        let image = info[UIImagePickerControllerOriginalImage] as UIImage
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.image.image = image
         self.selectedPerson.image = image
         
