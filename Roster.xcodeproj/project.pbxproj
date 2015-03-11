@@ -16,6 +16,8 @@
 		5410906B1AA927F3002C6A1A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410906A1AA927F3002C6A1A /* Person.swift */; };
 		5410906D1AA92C1C002C6A1A /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410906C1AA92C1C002C6A1A /* PersonDetailViewController.swift */; };
 		544D3C901AAF7F0300F76B45 /* playIAm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 544D3C8F1AAF7F0300F76B45 /* playIAm.jpg */; };
+		544D3C921AB0AC0F00F76B45 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D3C911AB0AC0F00F76B45 /* PersonCell.swift */; };
+		544D3C941AB0B5AC00F76B45 /* People.plist in Resources */ = {isa = PBXBuildFile; fileRef = 544D3C931AB0B5AC00F76B45 /* People.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		5410906A1AA927F3002C6A1A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5410906C1AA92C1C002C6A1A /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		544D3C8F1AAF7F0300F76B45 /* playIAm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = playIAm.jpg; path = ../playIAm.jpg; sourceTree = "<group>"; };
+		544D3C911AB0AC0F00F76B45 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		544D3C931AB0B5AC00F76B45 /* People.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = People.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				5410906C1AA92C1C002C6A1A /* PersonDetailViewController.swift */,
 				5410906A1AA927F3002C6A1A /* Person.swift */,
 				5410904C1AA9258F002C6A1A /* Main.storyboard */,
+				544D3C931AB0B5AC00F76B45 /* People.plist */,
+				544D3C911AB0AC0F00F76B45 /* PersonCell.swift */,
 				5410904F1AA9258F002C6A1A /* Images.xcassets */,
 				544D3C8F1AAF7F0300F76B45 /* playIAm.jpg */,
 				541090511AA9258F002C6A1A /* LaunchScreen.xib */,
@@ -201,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544D3C941AB0B5AC00F76B45 /* People.plist in Resources */,
 				5410904E1AA9258F002C6A1A /* Main.storyboard in Resources */,
 				541090531AA9258F002C6A1A /* LaunchScreen.xib in Resources */,
 				541090501AA9258F002C6A1A /* Images.xcassets in Resources */,
@@ -223,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5410906D1AA92C1C002C6A1A /* PersonDetailViewController.swift in Sources */,
+				544D3C921AB0AC0F00F76B45 /* PersonCell.swift in Sources */,
 				5410906B1AA927F3002C6A1A /* Person.swift in Sources */,
 				5410904B1AA9258F002C6A1A /* ViewController.swift in Sources */,
 				541090491AA9258F002C6A1A /* AppDelegate.swift in Sources */,

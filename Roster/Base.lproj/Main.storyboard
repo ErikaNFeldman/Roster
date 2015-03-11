@@ -17,15 +17,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JJf-33-mZ6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JJf-33-mZ6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="69D-yn-PkN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="80" id="69D-yn-PkN">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="69D-yn-PkN" id="XuG-rV-HoN">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playIAm.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tjG-tM-PED">
+                                                    <rect key="frame" x="8" y="9" width="100" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="63" id="Wbb-zF-OGS"/>
+                                                        <constraint firstAttribute="width" constant="100" id="Wj8-KJ-sBf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person Menu Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AC2-tx-lg7">
+                                                    <rect key="frame" x="116" y="12" width="159" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="159" id="kn3-ck-EWQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AC2-tx-lg7" secondAttribute="bottom" constant="29" id="7p7-km-8QQ"/>
+                                                <constraint firstAttribute="centerY" secondItem="tjG-tM-PED" secondAttribute="centerY" constant="-1" id="Ghg-fV-k6F"/>
+                                                <constraint firstItem="AC2-tx-lg7" firstAttribute="leading" secondItem="tjG-tM-PED" secondAttribute="trailing" constant="8" id="K9s-dI-HGq"/>
+                                                <constraint firstItem="AC2-tx-lg7" firstAttribute="top" secondItem="XuG-rV-HoN" secondAttribute="topMargin" constant="4" id="a74-YC-j5O"/>
+                                                <constraint firstItem="tjG-tM-PED" firstAttribute="leading" secondItem="XuG-rV-HoN" secondAttribute="leadingMargin" id="skl-gX-p0h"/>
+                                                <constraint firstItem="tjG-tM-PED" firstAttribute="leading" secondItem="AC2-tx-lg7" secondAttribute="leading" id="x7x-Ng-d7Q"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="x7x-Ng-d7Q"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="7OA-9t-sWd" kind="show" identifier="ShowPersonDetail" id="Tgg-Av-QYj"/>
@@ -49,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzZ-nQ-uuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="387"/>
+            <point key="canvasLocation" x="883" y="376"/>
         </scene>
         <!--PersonDetailViewController-->
         <scene sceneID="f3m-yy-68N">
@@ -94,8 +125,10 @@
                                 <rect key="frame" x="180" y="200" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Apc-yi-ctQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Gip-1Q-KjE"/>
                                     <constraint firstAttribute="width" constant="240" id="PHg-w0-BIE"/>
                                     <constraint firstAttribute="width" constant="200" id="SEU-c2-8CN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="cAC-zA-qXm"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">

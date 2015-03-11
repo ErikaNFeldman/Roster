@@ -23,61 +23,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        
-        var cara = Person(firstName: "Cara", lastName: "D")
-        var erika = Person(firstName: "Erika", lastName: "Feldman")
-        var rene = Person(firstName: "Rene", lastName: "G")
-        var sarah = Person(firstName: "Sarah", lastName: "Hermanns")
-        var brad = Person(firstName: "Brad", lastName: "Johnson")
-        var jung = Person(firstName: "Jung", lastName: "Kim")
-        var robert = Person(firstName: "Robert", lastName: "Klein")
-        var kevin = Person(firstName: "Kevin", lastName: "Lam")
-        var hsia = Person(firstName: "Hsia-Chou", lastName: "Lin")
-        var randy = Person(firstName: "Randy", lastName: "McLain")
-        var jayden = Person(firstName: "Jayden", lastName: "Tan")
-        var reeve = Person(firstName: "Reeve", lastName: "Vogel")
-        var jacquin = Person(firstName: "Jacquin", lastName: "Wynn")
-        
-        self.people.append(cara)
-        self.people.append(erika)
-        self.people.append(rene)
-        self.people.append(sarah)
-        self.people.append(brad)
-        self.people.append(jung)
-        self.people.append(robert)
-        self.people.append(kevin)
-        self.people.append(hsia)
-        self.people.append(randy)
-        self.people.append(jayden)
-        self.people.append(reeve)
-        self.people.append(jacquin)
+        if let filePath = NSBundle.mainBundle().pathForResource("People",ofType: "plist"){
+            println(filePath)
+            if let plistArray = NSArray(contentsOfFile: filePath) {
+                print(plistArray.count)
+            }
+        }
         
         self.view.backgroundColor = UIColor.purpleColor()
-        println("Test")
+        self.tableView.dataSource = self
     }
-    
-override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowPersonDetail" {
-            println("showing person")
-            let destinationVC = segue.destinationViewController as PersonDetailViewController
-            let indexPath = self.tableView.indexPathForSelectedRow()
-            let person = self.people[indexPath!.row]
-            destinationVC.selectedPerson = person
-            destinationVC.title = "Person"
-        }
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.people.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        let person = self.people[indexPath.row]
-        cell.textLabel?.text = person.firstName + " " + person.lastName
-        return cell
-    }
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -85,6 +40,35 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.tableView.reloadData()
         
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.people.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as PersonCell
+        let personToDisplay = self.people[indexPath.row]
+        cell.personMenuLabel.text = personToDisplay.firstName
+        if personToDisplay.image != nil {
+            cell.personMenuView.image = personToDisplay.image
+        } else {
+            cell.personMenuView.image = UIImage(named: "playIAm.jpg")
+        }
+        return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowPersonDetail" {
+            println("showing person")
+            let destinationVC = segue.destinationViewController as PersonDetailViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let person = self.people[indexPath!.row]
+            destinationVC.title = "Person"
+            destinationVC.selectedPerson = person
+        }
+    }
+    
+  
     
     override func viewDidAppear(animated: Bool){
         super.viewDidAppear(animated)
