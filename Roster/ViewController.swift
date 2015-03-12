@@ -23,16 +23,23 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        if let filePath = NSBundle.mainBundle().pathForResource("People",ofType: "plist"){
+        let filePath = NSBundle.mainBundle().pathForResource("People",ofType: "plist")
             println(filePath)
-            if let plistArray = NSArray(contentsOfFile: filePath) {
-                print(plistArray.count)
-            }
-        }
+        let plistArray = NSArray(contentsOfFile: filePath!)
+        
+        for object in plistArray! {
+            if let personDictionary = object as? NSDictionary {
+                let firstName = personDictionary["firstName"] as String
+                let lastName = personDictionary["lastName"] as String
+                
+                var person = Person(firstName: firstName, lastName: lastName)
+                self.people.append(person)
+            } // if let personDictionary
+        } // for object
         
         self.view.backgroundColor = UIColor.purpleColor()
         self.tableView.dataSource = self
-    }
+    } // viewDidLoad()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,13 +53,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as PersonCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("PersonCell", forIndexPath: indexPath) as PersonCell
         let personToDisplay = self.people[indexPath.row]
         cell.personMenuLabel.text = personToDisplay.firstName
         if personToDisplay.image != nil {
-            cell.personMenuView.image = personToDisplay.image
+            cell.personMenuImage.image = personToDisplay.image
         } else {
-            cell.personMenuView.image = UIImage(named: "playIAm.jpg")
+            cell.personMenuImage.image = UIImage(named: "playIAm.jpg")
         }
         return cell
     }

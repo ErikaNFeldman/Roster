@@ -10,9 +10,10 @@ import UIKit
 
 class PersonCell: UITableViewCell {
 
-    @IBOutlet weak var personMenuView :UIImageView!
     
-    @IBOutlet weak var personMenuLabel :UILabel!  //the ! unwraps the object with the value so that you don't get the object name with the value inside quotations.
+    @IBOutlet weak var personMenuLabel: UILabel!
+
+    @IBOutlet weak var personMenuImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="80" id="69D-yn-PkN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="80" id="69D-yn-PkN" customClass="PersonCell" customModule="Roster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="69D-yn-PkN" id="XuG-rV-HoN">
@@ -59,6 +59,8 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="personMenuImage" destination="tjG-tM-PED" id="Eh4-Oz-kvW"/>
+                                            <outlet property="personMenuLabel" destination="AC2-tx-lg7" id="4fT-EE-hCy"/>
                                             <segue destination="7OA-9t-sWd" kind="show" identifier="ShowPersonDetail" id="Tgg-Av-QYj"/>
                                         </connections>
                                     </tableViewCell>
